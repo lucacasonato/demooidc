@@ -12,5 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: tar -xzf deno.tar.gz
       - run: ../deno reg publish .
         working-directory: ./src
