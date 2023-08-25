@@ -1,0 +1,16 @@
+name: publish
+
+on:
+  push:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: ../deno reg publish .
+        working-directory: ./src
